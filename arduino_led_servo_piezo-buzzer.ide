@@ -29,6 +29,20 @@ void loop() {
       digitalWrite(redLED, LOW);
     }
 
+    if (data.startsWith("Yellow Led")) {
+      digitalWrite(yellowLED, HIGH);
+    }
+    if (data.startsWith("Yellow Led Off")) {
+      digitalWrite(yellowLED, LOW);
+    }
+
+    if (data.startsWith("Green Led")) {
+    digitalWrite(greenLED, HIGH);
+    }
+    if (data.startsWith("Green Led Off")) {
+      digitalWrite(greenLED, LOW);
+    }
+    
   }
 }
 

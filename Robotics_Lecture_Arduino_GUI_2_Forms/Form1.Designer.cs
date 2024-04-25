@@ -45,9 +45,9 @@
             this.groupBox1.Controls.Add(this.redLEDCheckbox);
             this.groupBox1.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.groupBox1.Location = new System.Drawing.Point(339, 105);
+            this.groupBox1.Location = new System.Drawing.Point(49, 46);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(370, 238);
+            this.groupBox1.Size = new System.Drawing.Size(235, 177);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LED Selector";
@@ -83,7 +83,7 @@
             this.greenLEDCheckbox.AutoSize = true;
             this.greenLEDCheckbox.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.greenLEDCheckbox.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.greenLEDCheckbox.Location = new System.Drawing.Point(26, 127);
+            this.greenLEDCheckbox.Location = new System.Drawing.Point(26, 116);
             this.greenLEDCheckbox.Name = "greenLEDCheckbox";
             this.greenLEDCheckbox.Size = new System.Drawing.Size(183, 32);
             this.greenLEDCheckbox.TabIndex = 2;
