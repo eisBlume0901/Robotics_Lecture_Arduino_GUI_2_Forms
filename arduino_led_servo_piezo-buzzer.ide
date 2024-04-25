@@ -1,0 +1,39 @@
+
+int redLED = 3;
+int yellowLED = 5;
+int greenLED = 6;
+
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+
+  pinMode(redLED, OUTPUT);
+  pinMode(yellowLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
+  
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  if (Serial.available()  > 0) 
+  {
+
+    String data = Serial.readString();
+
+    if (data.startsWith("Red Led")) {
+      digitalWrite(redLED, HIGH);
+    }
+    if (data.startsWith("Red Led Off")) {
+      digitalWrite(redLED, LOW);
+    }
+
+  }
+}
+
+void turnLEDs(int redStatus, int yellowStatus, int greenStatus) {
+  digitalWrite(redLED, redStatus);
+  digitalWrite(yellowLED,yellowStatus);
+  digitalWrite(greenLED, greenStatus);
+}
