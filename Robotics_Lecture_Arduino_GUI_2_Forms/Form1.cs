@@ -12,9 +12,9 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
 {
     public partial class Form1 : Form
     {
-        private String redIntensity;
-        private String yellowIntensity;
-        private String greenIntensity;
+        private String redIntensity = "";
+        private String yellowIntensity = "";
+        private String greenIntensity = "";
 
         public Form1()
         {
@@ -70,7 +70,6 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
             {
                 serialPort1.Write("Red Intensity 0");
             }
-
             serialPort1.Write(redIntensity);
         }
 
