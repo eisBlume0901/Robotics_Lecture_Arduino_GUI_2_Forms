@@ -30,11 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.redLEDCheckbox = new System.Windows.Forms.CheckBox();
-            this.yellowLEDCheckbox = new System.Windows.Forms.CheckBox();
             this.greenLEDCheckbox = new System.Windows.Forms.CheckBox();
+            this.yellowLEDCheckbox = new System.Windows.Forms.CheckBox();
+            this.redLEDCheckbox = new System.Windows.Forms.CheckBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.greenButton = new System.Windows.Forms.Button();
+            this.greenTrackBar = new System.Windows.Forms.TrackBar();
+            this.yellowButton = new System.Windows.Forms.Button();
+            this.yellowTrackBar = new System.Windows.Forms.TrackBar();
+            this.redButton = new System.Windows.Forms.Button();
+            this.redTrackBar = new System.Windows.Forms.TrackBar();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.greenTrackBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yellowTrackBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -52,18 +63,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LED Selector";
             // 
-            // redLEDCheckbox
+            // greenLEDCheckbox
             // 
-            this.redLEDCheckbox.AutoSize = true;
-            this.redLEDCheckbox.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.redLEDCheckbox.ForeColor = System.Drawing.Color.OrangeRed;
-            this.redLEDCheckbox.Location = new System.Drawing.Point(26, 40);
-            this.redLEDCheckbox.Name = "redLEDCheckbox";
-            this.redLEDCheckbox.Size = new System.Drawing.Size(163, 32);
-            this.redLEDCheckbox.TabIndex = 0;
-            this.redLEDCheckbox.Text = "Turn Red LED";
-            this.redLEDCheckbox.UseVisualStyleBackColor = true;
-            this.redLEDCheckbox.CheckedChanged += new System.EventHandler(this.redLEDCheckbox_CheckedChanged);
+            this.greenLEDCheckbox.AutoSize = true;
+            this.greenLEDCheckbox.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.greenLEDCheckbox.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.greenLEDCheckbox.Location = new System.Drawing.Point(26, 116);
+            this.greenLEDCheckbox.Name = "greenLEDCheckbox";
+            this.greenLEDCheckbox.Size = new System.Drawing.Size(183, 32);
+            this.greenLEDCheckbox.TabIndex = 2;
+            this.greenLEDCheckbox.Text = "Turn Green LED";
+            this.greenLEDCheckbox.UseVisualStyleBackColor = true;
+            this.greenLEDCheckbox.CheckedChanged += new System.EventHandler(this.greenCheckBox_CheckedChanged);
             // 
             // yellowLEDCheckbox
             // 
@@ -78,33 +89,120 @@
             this.yellowLEDCheckbox.UseVisualStyleBackColor = true;
             this.yellowLEDCheckbox.CheckedChanged += new System.EventHandler(this.yellowLEDCheckbox_CheckedChanged);
             // 
-            // greenLEDCheckbox
+            // redLEDCheckbox
             // 
-            this.greenLEDCheckbox.AutoSize = true;
-            this.greenLEDCheckbox.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.greenLEDCheckbox.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.greenLEDCheckbox.Location = new System.Drawing.Point(26, 116);
-            this.greenLEDCheckbox.Name = "greenLEDCheckbox";
-            this.greenLEDCheckbox.Size = new System.Drawing.Size(183, 32);
-            this.greenLEDCheckbox.TabIndex = 2;
-            this.greenLEDCheckbox.Text = "Turn Green LED";
-            this.greenLEDCheckbox.UseVisualStyleBackColor = true;
-            this.greenLEDCheckbox.CheckedChanged += new System.EventHandler(this.greenCheckBox_CheckedChanged);
+            this.redLEDCheckbox.AutoSize = true;
+            this.redLEDCheckbox.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.redLEDCheckbox.ForeColor = System.Drawing.Color.OrangeRed;
+            this.redLEDCheckbox.Location = new System.Drawing.Point(26, 40);
+            this.redLEDCheckbox.Name = "redLEDCheckbox";
+            this.redLEDCheckbox.Size = new System.Drawing.Size(163, 32);
+            this.redLEDCheckbox.TabIndex = 0;
+            this.redLEDCheckbox.Text = "Turn Red LED";
+            this.redLEDCheckbox.UseVisualStyleBackColor = true;
+            this.redLEDCheckbox.CheckedChanged += new System.EventHandler(this.redLEDCheckbox_CheckedChanged);
             // 
             // serialPort1
             // 
             this.serialPort1.PortName = "COM3";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox2.Controls.Add(this.greenButton);
+            this.groupBox2.Controls.Add(this.greenTrackBar);
+            this.groupBox2.Controls.Add(this.yellowButton);
+            this.groupBox2.Controls.Add(this.yellowTrackBar);
+            this.groupBox2.Controls.Add(this.redButton);
+            this.groupBox2.Controls.Add(this.redTrackBar);
+            this.groupBox2.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.groupBox2.Location = new System.Drawing.Point(326, 46);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(704, 254);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "LED Brightness Controller";
+            // 
+            // greenButton
+            // 
+            this.greenButton.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.greenButton.Location = new System.Drawing.Point(522, 179);
+            this.greenButton.Name = "greenButton";
+            this.greenButton.Size = new System.Drawing.Size(154, 49);
+            this.greenButton.TabIndex = 5;
+            this.greenButton.Text = "Send Green";
+            this.greenButton.UseVisualStyleBackColor = true;
+            this.greenButton.Click += new System.EventHandler(this.greenButton_Click);
+            // 
+            // greenTrackBar
+            // 
+            this.greenTrackBar.Location = new System.Drawing.Point(20, 191);
+            this.greenTrackBar.Maximum = 255;
+            this.greenTrackBar.Name = "greenTrackBar";
+            this.greenTrackBar.Size = new System.Drawing.Size(496, 69);
+            this.greenTrackBar.TabIndex = 4;
+            this.greenTrackBar.TickFrequency = 15;
+            this.greenTrackBar.Scroll += new System.EventHandler(this.greenTrackBar_Scroll);
+            // 
+            // yellowButton
+            // 
+            this.yellowButton.ForeColor = System.Drawing.Color.Goldenrod;
+            this.yellowButton.Location = new System.Drawing.Point(522, 107);
+            this.yellowButton.Name = "yellowButton";
+            this.yellowButton.Size = new System.Drawing.Size(154, 49);
+            this.yellowButton.TabIndex = 3;
+            this.yellowButton.Text = "Send Yellow";
+            this.yellowButton.UseVisualStyleBackColor = true;
+            this.yellowButton.Click += new System.EventHandler(this.yellowButton_Click);
+            // 
+            // yellowTrackBar
+            // 
+            this.yellowTrackBar.Location = new System.Drawing.Point(20, 116);
+            this.yellowTrackBar.Maximum = 255;
+            this.yellowTrackBar.Name = "yellowTrackBar";
+            this.yellowTrackBar.Size = new System.Drawing.Size(496, 69);
+            this.yellowTrackBar.TabIndex = 2;
+            this.yellowTrackBar.TickFrequency = 15;
+            this.yellowTrackBar.Scroll += new System.EventHandler(this.yellowTrackBar_Scroll);
+            // 
+            // redButton
+            // 
+            this.redButton.ForeColor = System.Drawing.Color.OrangeRed;
+            this.redButton.Location = new System.Drawing.Point(522, 41);
+            this.redButton.Name = "redButton";
+            this.redButton.Size = new System.Drawing.Size(154, 49);
+            this.redButton.TabIndex = 1;
+            this.redButton.Text = "Send Red";
+            this.redButton.UseVisualStyleBackColor = true;
+            this.redButton.Click += new System.EventHandler(this.redButton_Click);
+            // 
+            // redTrackBar
+            // 
+            this.redTrackBar.Location = new System.Drawing.Point(20, 41);
+            this.redTrackBar.Maximum = 255;
+            this.redTrackBar.Name = "redTrackBar";
+            this.redTrackBar.Size = new System.Drawing.Size(496, 69);
+            this.redTrackBar.TabIndex = 0;
+            this.redTrackBar.TickFrequency = 15;
+            this.redTrackBar.Scroll += new System.EventHandler(this.redTrackBar_Scroll);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 634);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.greenTrackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yellowTrackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redTrackBar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -116,6 +214,13 @@
         private System.Windows.Forms.CheckBox yellowLEDCheckbox;
         private System.Windows.Forms.CheckBox greenLEDCheckbox;
         private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button yellowButton;
+        private System.Windows.Forms.TrackBar yellowTrackBar;
+        private System.Windows.Forms.Button redButton;
+        private System.Windows.Forms.TrackBar redTrackBar;
+        private System.Windows.Forms.TrackBar greenTrackBar;
+        private System.Windows.Forms.Button greenButton;
     }
 }
 

@@ -42,7 +42,24 @@ void loop() {
     if (data.startsWith("Green Led Off")) {
       digitalWrite(greenLED, LOW);
     }
-    
+
+    if (data.startsWith("Red Intensity")) {
+      data.replace("Red Intensity", "");
+      int brightness = data.toInt();
+      analogWrite(redLED, brightness);
+    }
+
+    if (data.startsWith("Yellow Intensity")) {
+      data.replace("Yellow Intensity", "");
+      int brightness = data.toInt();
+      analogWrite(yellowLED, brightness);
+    }
+
+    if (data.startsWith("Green Intensity")) {
+      data.replace("Green Intensity", "");
+      int brightness = data.toInt();
+      analogWrite(greenLED, brightness);
+    }
   }
 }
 
