@@ -28,6 +28,7 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
             if (redLEDCheckbox.Checked)
             {
                 serialPort1.Write("ROn");
+                redIntensity = "R0";
             }
             else
             {
@@ -40,6 +41,7 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
             if (yellowLEDCheckbox.Checked)
             {
                 serialPort1.Write("YOn");
+                yellowIntensity = "Y0";
             }
             else
             {
@@ -52,6 +54,7 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
             if (greenLEDCheckbox.Checked)
             {
                 serialPort1.Write("GOn");
+                greenIntensity = "G0";
             }
             else
             {
@@ -71,6 +74,7 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
             {
                 serialPort1.Write("RI0");
             }
+            redLEDCheckbox.Checked = false;
             serialPort1.Write(redIntensity);
         }
 
@@ -85,7 +89,7 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
             {
                 serialPort1.Write("YI0");
             }
-
+            yellowLEDCheckbox.Checked = false;
             serialPort1.Write(yellowIntensity);
         }
 
@@ -100,11 +104,13 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
             {
                 serialPort1.Write("GI0");
             }
+            greenLEDCheckbox.Checked = false;
             serialPort1.Write(greenIntensity);
         }
 
         private void resetButton_Click(object sender, EventArgs e)
         {
+            servoRichTextBox.Text = "0";
             serialPort1.Write("Servo0");
         }
 
