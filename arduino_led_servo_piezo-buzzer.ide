@@ -368,7 +368,7 @@ void playFirstSong() {
 }
 
 void playSecondSong() {
-  int duration = 2500;
+  int duration = 2000;
   int melody[] = {
     NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4, NOTE_F4,
     NOTE_F4, NOTE_G4, NOTE_A4, NOTE_C5,
@@ -438,7 +438,7 @@ void playSecondSong() {
     4, 4, 2, 
 
     4, 4, 
-    2,
+    1,
     8,
     4, 4, 8, 
 
