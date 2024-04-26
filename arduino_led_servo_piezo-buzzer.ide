@@ -121,41 +121,41 @@ void loop() {
 
     String data = Serial.readString();
 
-    if (data.startsWith("Red Led")) {
-      digitalWrite(redLED, HIGH);
+    if (data.startsWith("ROn")) {
+      analogWrite(redLED, 255);
     }
-    if (data.startsWith("Red Led Off")) {
-      digitalWrite(redLED, LOW);
-    }
-
-    if (data.startsWith("Yellow Led")) {
-      digitalWrite(yellowLED, HIGH);
-    }
-    if (data.startsWith("Yellow Led Off")) {
-      digitalWrite(yellowLED, LOW);
+    if (data.startsWith("ROff")) {
+      analogWrite(redLED, 0);
     }
 
-    if (data.startsWith("Green Led")) {
-    digitalWrite(greenLED, HIGH);
+    if (data.startsWith("YOn")) {
+      analogWrite(yellowLED, 255);
     }
-    if (data.startsWith("Green Led Off")) {
-      digitalWrite(greenLED, LOW);
+    if (data.startsWith("YOff")) {
+      analogWrite(yellowLED, 0);
     }
 
-    if (data.startsWith("Red Intensity")) {
-      data.replace("Red Intensity", "");
+    if (data.startsWith("GOn")) {
+      analogWrite(greenLED, 255);
+    }
+    if (data.startsWith("GOff")) {
+      analogWrite(greenLED, 0);
+    }
+
+    if (data.startsWith("RI")) {
+      data.replace("RI", "");
       int brightness = data.toInt();
       analogWrite(redLED, brightness);
     }
 
-    if (data.startsWith("Yellow Intensity")) {
-      data.replace("Yellow Intensity", "");
+    if (data.startsWith("YI")) {
+      data.replace("YI", "");
       int brightness = data.toInt();
       analogWrite(yellowLED, brightness);
     }
 
-    if (data.startsWith("Green Intensity")) {
-      data.replace("Green Intensity", "");
+    if (data.startsWith("GI")) {
+      data.replace("GI", "");
       int brightness = data.toInt();
       analogWrite(greenLED, brightness);
     }
@@ -166,23 +166,23 @@ void loop() {
       servo.write(angle);
     }
 
-    if (data.startsWith("Blink LEDs")) {
+    if (data.startsWith("Blnk")) {
       blinkLEDs(); 
     }
 
-    if (data.startsWith("Beep Buzzer")) {
+    if (data.startsWith("Beep")) {
       beepBuzzer();
     }
 
-    if (data.startsWith("Vibrate Servo")) {
+    if (data.startsWith("Vibrate")) {
       vibrateServo();
     }
 
-    if (data.startsWith("Play First Song")) {
+    if (data.startsWith("FirstSong")) {
       playFirstSong();
     }
 
-    if (data.startsWith("Play Second Song")) {
+    if (data.startsWith("SecondSong")) {
       playSecondSong();
     }
   }

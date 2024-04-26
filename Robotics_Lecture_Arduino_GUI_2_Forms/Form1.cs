@@ -27,11 +27,11 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
         {
             if (redLEDCheckbox.Checked)
             {
-                serialPort1.Write("Red Led");
+                serialPort1.Write("ROn");
             }
             else
             {
-                serialPort1.Write("Red Led Off");
+                serialPort1.Write("ROff");
             }
         }
 
@@ -39,11 +39,11 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
         {
             if (yellowLEDCheckbox.Checked)
             {
-                serialPort1.Write("Yellow Led");
+                serialPort1.Write("YOn");
             }
             else
             {
-                serialPort1.Write("Yellow Led Off");
+                serialPort1.Write("YOff");
             }
         }
 
@@ -51,39 +51,39 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
         {
             if (greenLEDCheckbox.Checked)
             {
-                serialPort1.Write("Green Led");
+                serialPort1.Write("GOn");
             }
             else
             {
-                serialPort1.Write("Green Led Off");
+                serialPort1.Write("GOff");
             }
 
         }
 
         private void redTrackBar_Scroll(object sender, EventArgs e)
         {
-            redIntensity = "Red Intensity" + redTrackBar.Value;
+            redIntensity = "RI" + redTrackBar.Value;
         }
 
         private void redButton_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(redIntensity))
             {
-                serialPort1.Write("Red Intensity 0");
+                serialPort1.Write("RI0");
             }
             serialPort1.Write(redIntensity);
         }
 
         private void yellowTrackBar_Scroll(object sender, EventArgs e)
         {
-            yellowIntensity = "Yellow Intensity" + yellowTrackBar.Value;
+            yellowIntensity = "YI" + yellowTrackBar.Value;
         }
 
         private void yellowButton_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty (yellowIntensity))
+            if (String.IsNullOrEmpty(yellowIntensity))
             {
-                serialPort1.Write("Yellow Intensity 0");
+                serialPort1.Write("YI0");
             }
 
             serialPort1.Write(yellowIntensity);
@@ -91,14 +91,14 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
 
         private void greenTrackBar_Scroll(object sender, EventArgs e)
         {
-            greenIntensity = "Green Intensity" + greenTrackBar.Value;
+            greenIntensity = "GI" + greenTrackBar.Value;
         }
 
         private void greenButton_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(greenIntensity))
             {
-                serialPort1.Write("Green Intensity 0");
+                serialPort1.Write("GI0");
             }
             serialPort1.Write(greenIntensity);
         }
@@ -117,7 +117,7 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
         {
             if (blinkLEDsButton.Checked)
             {
-                serialPort1.Write("Blink LEDs");
+                serialPort1.Write("Blnk");
             }
             else
             {
@@ -129,7 +129,7 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
         {
             if (beepBuzzerButton.Checked)
             {
-                serialPort1.Write("Beep Buzzer");
+                serialPort1.Write("Beep");
             }
             else
             {
@@ -141,7 +141,7 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
         {
             if (vibrateServoButton.Checked)
             {
-                serialPort1.Write("Vibrate Servo");
+                serialPort1.Write("Vibrate");
             }
             else
             {
@@ -158,13 +158,13 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
         {
             if (selectedSong.Equals("La Vien Rose"))
             {
-                serialPort1.Write("Play First Song");
+                serialPort1.Write("FirstSong");
                 songStatusLabel.Text = "Now Playing La Vien Rose";
             }
 
             if (selectedSong.Equals("Fly Me to the Moon"))
             {
-                serialPort1.Write("Play Second Song");
+                serialPort1.Write("SecondSong");
                 songStatusLabel.Text = "Now Playing Fly Me to the Moon";
             }
 
