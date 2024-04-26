@@ -111,5 +111,29 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
         {
             serialPort1.Write("Servo" + servoRichTextBox.Text);
         }
+
+        private void blinkLEDsButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (blinkLEDsButton.Checked)
+            {
+                serialPort1.Write("Blink LEDs");
+            }
+            else
+            {
+                blinkLEDsButton.Checked = false;
+            }
+        }
+
+        private void beepBuzzerButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (beepBuzzerButton.Checked)
+            {
+                serialPort1.Write("Beep Buzzer");
+            }
+            else
+            {
+                beepBuzzerButton.Checked = false;
+            }
+        }
     }
 }

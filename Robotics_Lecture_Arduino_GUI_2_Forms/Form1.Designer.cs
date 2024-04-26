@@ -45,12 +45,20 @@
             this.servoRichTextBox = new System.Windows.Forms.RichTextBox();
             this.resetButton = new System.Windows.Forms.Button();
             this.setServoAngleButton = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.blinkLEDsButton = new System.Windows.Forms.RadioButton();
+            this.beepBuzzerButton = new System.Windows.Forms.RadioButton();
+            this.vibrateServoButton = new System.Windows.Forms.RadioButton();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.greenTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yellowTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redTrackBar)).BeginInit();
             this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -131,7 +139,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(626, 203);
+            this.groupBox2.Size = new System.Drawing.Size(595, 203);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "LED Brightness Controller";
@@ -139,7 +147,7 @@
             // greenButton
             // 
             this.greenButton.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.greenButton.Location = new System.Drawing.Point(464, 143);
+            this.greenButton.Location = new System.Drawing.Point(435, 141);
             this.greenButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.greenButton.Name = "greenButton";
             this.greenButton.Size = new System.Drawing.Size(137, 39);
@@ -154,7 +162,7 @@
             this.greenTrackBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.greenTrackBar.Maximum = 255;
             this.greenTrackBar.Name = "greenTrackBar";
-            this.greenTrackBar.Size = new System.Drawing.Size(441, 56);
+            this.greenTrackBar.Size = new System.Drawing.Size(411, 56);
             this.greenTrackBar.TabIndex = 4;
             this.greenTrackBar.TickFrequency = 15;
             this.greenTrackBar.Scroll += new System.EventHandler(this.greenTrackBar_Scroll);
@@ -162,7 +170,7 @@
             // yellowButton
             // 
             this.yellowButton.ForeColor = System.Drawing.Color.Goldenrod;
-            this.yellowButton.Location = new System.Drawing.Point(464, 86);
+            this.yellowButton.Location = new System.Drawing.Point(435, 81);
             this.yellowButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.yellowButton.Name = "yellowButton";
             this.yellowButton.Size = new System.Drawing.Size(137, 39);
@@ -177,7 +185,7 @@
             this.yellowTrackBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.yellowTrackBar.Maximum = 255;
             this.yellowTrackBar.Name = "yellowTrackBar";
-            this.yellowTrackBar.Size = new System.Drawing.Size(441, 56);
+            this.yellowTrackBar.Size = new System.Drawing.Size(411, 56);
             this.yellowTrackBar.TabIndex = 2;
             this.yellowTrackBar.TickFrequency = 15;
             this.yellowTrackBar.Scroll += new System.EventHandler(this.yellowTrackBar_Scroll);
@@ -185,7 +193,7 @@
             // redButton
             // 
             this.redButton.ForeColor = System.Drawing.Color.OrangeRed;
-            this.redButton.Location = new System.Drawing.Point(464, 33);
+            this.redButton.Location = new System.Drawing.Point(435, 27);
             this.redButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.redButton.Name = "redButton";
             this.redButton.Size = new System.Drawing.Size(137, 39);
@@ -200,7 +208,7 @@
             this.redTrackBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.redTrackBar.Maximum = 255;
             this.redTrackBar.Name = "redTrackBar";
-            this.redTrackBar.Size = new System.Drawing.Size(441, 56);
+            this.redTrackBar.Size = new System.Drawing.Size(411, 56);
             this.redTrackBar.TabIndex = 0;
             this.redTrackBar.TickFrequency = 15;
             this.redTrackBar.Scroll += new System.EventHandler(this.redTrackBar_Scroll);
@@ -235,7 +243,7 @@
             // resetButton
             // 
             this.resetButton.ForeColor = System.Drawing.Color.OrangeRed;
-            this.resetButton.Location = new System.Drawing.Point(23, 149);
+            this.resetButton.Location = new System.Drawing.Point(19, 204);
             this.resetButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(158, 39);
@@ -247,7 +255,7 @@
             // setServoAngleButton
             // 
             this.setServoAngleButton.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.setServoAngleButton.Location = new System.Drawing.Point(23, 204);
+            this.setServoAngleButton.Location = new System.Drawing.Point(23, 149);
             this.setServoAngleButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.setServoAngleButton.Name = "setServoAngleButton";
             this.setServoAngleButton.Size = new System.Drawing.Size(158, 39);
@@ -256,11 +264,91 @@
             this.setServoAngleButton.UseVisualStyleBackColor = true;
             this.setServoAngleButton.Click += new System.EventHandler(this.setServoAngleButton_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox3.Controls.Add(this.vibrateServoButton);
+            this.groupBox3.Controls.Add(this.beepBuzzerButton);
+            this.groupBox3.Controls.Add(this.blinkLEDsButton);
+            this.groupBox3.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.groupBox3.Location = new System.Drawing.Point(290, 273);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(234, 202);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Output Actions";
+            // 
+            // blinkLEDsButton
+            // 
+            this.blinkLEDsButton.AutoSize = true;
+            this.blinkLEDsButton.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.blinkLEDsButton.Location = new System.Drawing.Point(39, 47);
+            this.blinkLEDsButton.Name = "blinkLEDsButton";
+            this.blinkLEDsButton.Size = new System.Drawing.Size(110, 27);
+            this.blinkLEDsButton.TabIndex = 0;
+            this.blinkLEDsButton.TabStop = true;
+            this.blinkLEDsButton.Text = "Blink LEDs";
+            this.blinkLEDsButton.UseVisualStyleBackColor = true;
+            this.blinkLEDsButton.CheckedChanged += new System.EventHandler(this.blinkLEDsButton_CheckedChanged);
+            // 
+            // beepBuzzerButton
+            // 
+            this.beepBuzzerButton.AutoSize = true;
+            this.beepBuzzerButton.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.beepBuzzerButton.Location = new System.Drawing.Point(39, 95);
+            this.beepBuzzerButton.Name = "beepBuzzerButton";
+            this.beepBuzzerButton.Size = new System.Drawing.Size(126, 27);
+            this.beepBuzzerButton.TabIndex = 1;
+            this.beepBuzzerButton.TabStop = true;
+            this.beepBuzzerButton.Text = "Beep Buzzer";
+            this.beepBuzzerButton.UseVisualStyleBackColor = true;
+            this.beepBuzzerButton.CheckedChanged += new System.EventHandler(this.beepBuzzerButton_CheckedChanged);
+            // 
+            // vibrateServoButton
+            // 
+            this.vibrateServoButton.AutoSize = true;
+            this.vibrateServoButton.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vibrateServoButton.Location = new System.Drawing.Point(39, 144);
+            this.vibrateServoButton.Name = "vibrateServoButton";
+            this.vibrateServoButton.Size = new System.Drawing.Size(134, 27);
+            this.vibrateServoButton.TabIndex = 2;
+            this.vibrateServoButton.TabStop = true;
+            this.vibrateServoButton.Text = "Vibrate Servo";
+            this.vibrateServoButton.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox5.Controls.Add(this.comboBox2);
+            this.groupBox5.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.groupBox5.Location = new System.Drawing.Point(564, 273);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox5.Size = new System.Drawing.Size(321, 202);
+            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Song Player";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(22, 47);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(276, 31);
+            this.comboBox2.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 507);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -275,6 +363,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.yellowTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.redTrackBar)).EndInit();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -297,6 +388,12 @@
         private System.Windows.Forms.RichTextBox servoRichTextBox;
         private System.Windows.Forms.Button setServoAngleButton;
         private System.Windows.Forms.Button resetButton;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton vibrateServoButton;
+        private System.Windows.Forms.RadioButton beepBuzzerButton;
+        private System.Windows.Forms.RadioButton blinkLEDsButton;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
 

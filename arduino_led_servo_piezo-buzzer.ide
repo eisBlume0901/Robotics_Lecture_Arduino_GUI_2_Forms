@@ -7,6 +7,8 @@ int greenLED = 6;
 Servo servo;
 int servoPin = 9;
 
+int buzzPin = 10;
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
@@ -17,10 +19,12 @@ void setup() {
 
   servo.attach(servoPin);
   
+  pinMode(buzzPin, OUTPUT);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+
 
   if (Serial.available()  > 0) 
   {
@@ -71,11 +75,92 @@ void loop() {
       int angle = data.toInt();
       servo.write(angle);
     }
+
+    if (data.startsWith("Blink LEDs")) {
+      blinkLEDs(); 
+    }
+
+    if (data.startsWith("Beep Buzzer")) {
+      beepBuzzer();
+    }
   }
 }
 
-void turnLEDs(int redStatus, int yellowStatus, int greenStatus) {
+void controlLEDs(int redStatus, int yellowStatus, int greenStatus) {
   digitalWrite(redLED, redStatus);
-  digitalWrite(yellowLED,yellowStatus);
+  digitalWrite(yellowLED, yellowStatus);
   digitalWrite(greenLED, greenStatus);
+}
+
+void blinkLEDs() {
+  int time1 = 250;
+  
+  int loop1 = 2;
+
+  while (loop1 > 0) {
+    controlLEDs(1, 0, 0);
+    delay(time1);
+    controlLEDs(0, 0, 0);
+    delay(time1);
+    loop1--;
+  }
+
+  int loop2 = 2;
+
+  while (loop2 > 0) {
+    controlLEDs(0, 1, 0);
+    delay(time1);
+    controlLEDs(0, 0, 0);
+    delay(time1);
+    loop2--;
+  }
+  
+  int loop3 = 2;
+  while (loop3 > 0) {
+    controlLEDs(0, 0, 1);
+    delay(time1);
+    controlLEDs(0, 0, 0);
+    delay(time1);
+    loop3--;
+  }
+
+  int loop4 = 2;
+
+  while (loop4 > 0) {
+    controlLEDs(0, 0, 1);
+    delay(time1);
+    controlLEDs(0, 1, 0);
+    delay(time1);
+    controlLEDs(1, 0, 0);
+    delay(time1);
+    controlLEDs(0, 1, 0);
+    delay(time1);
+    controlLEDs(0, 0, 1);
+    loop4--;
+  }
+
+  int loop5 = 4;
+  while (loop5 > 0) {
+    controlLEDs(1, 1, 1);
+    delay(time1);
+    controlLEDs(0, 0, 0);
+    delay(time1);
+    loop5--;
+  }
+}
+
+void beepBuzzer() {
+  int duration = 100;
+  int frequency = 500;
+  int interval = 250;
+
+  int loop1 = 3;
+  while (loop1 > 0) {
+    tone(buzzPin, frequency, duration);
+    delayMicroseconds(interval);
+    tone(buzzPin, frequency, duration);
+    delayMicroseconds(interval);
+    loop1--;
+  }
+
 }
