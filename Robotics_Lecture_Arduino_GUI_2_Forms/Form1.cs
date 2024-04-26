@@ -135,5 +135,17 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
                 beepBuzzerButton.Checked = false;
             }
         }
+
+        private void vibrateServoButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (vibrateServoButton.Checked)
+            {
+                serialPort1.Write("Vibrate Servo");
+            }
+            else
+            {
+                vibrateServoButton.Checked = false;
+            }
+        }
     }
 }

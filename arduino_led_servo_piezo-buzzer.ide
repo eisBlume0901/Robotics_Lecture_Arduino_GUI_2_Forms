@@ -18,6 +18,7 @@ void setup() {
   pinMode(greenLED, OUTPUT);
 
   servo.attach(servoPin);
+  servo.write(0);
   
   pinMode(buzzPin, OUTPUT);
 }
@@ -82,6 +83,10 @@ void loop() {
 
     if (data.startsWith("Beep Buzzer")) {
       beepBuzzer();
+    }
+
+    if (data.startsWith("Vibrate Servo")) {
+      vibrateServo();
     }
   }
 }
@@ -153,14 +158,46 @@ void beepBuzzer() {
   int duration = 100;
   int frequency = 500;
   int interval = 250;
-
   int loop1 = 3;
+
   while (loop1 > 0) {
     tone(buzzPin, frequency, duration);
-    delayMicroseconds(interval);
+    delay(interval);
+    noTone(buzzPin);
     tone(buzzPin, frequency, duration);
-    delayMicroseconds(interval);
+    delay(interval);
+    noTone(buzzPin);
     loop1--;
   }
 
+}
+
+void vibrateServo() {
+  
+  int duration = 200;
+  int loop1 = 2;
+
+  while (loop1 > 0) {
+    servo.write(0);
+    delay(duration);
+    servo.write(45);
+    delay(duration);
+    servo.write(90);
+    delay(duration);
+    servo.write(135);
+    delay(duration);
+    servo.write(180);
+    delay(duration);
+    servo.write(135);
+    delay(duration);
+    servo.write(90);
+    delay(duration);
+    servo.write(45);
+    delay(duration);
+    servo.write(0);
+    delay(duration);
+    loop1--;
+  }
+ 
+  
 }

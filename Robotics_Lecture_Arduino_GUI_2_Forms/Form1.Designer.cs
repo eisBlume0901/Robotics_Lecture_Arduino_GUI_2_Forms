@@ -313,11 +313,12 @@
             this.vibrateServoButton.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vibrateServoButton.Location = new System.Drawing.Point(39, 144);
             this.vibrateServoButton.Name = "vibrateServoButton";
-            this.vibrateServoButton.Size = new System.Drawing.Size(134, 27);
+            this.vibrateServoButton.Size = new System.Drawing.Size(167, 27);
             this.vibrateServoButton.TabIndex = 2;
             this.vibrateServoButton.TabStop = true;
-            this.vibrateServoButton.Text = "Vibrate Servo";
+            this.vibrateServoButton.Text = "Rotate Servo Arm";
             this.vibrateServoButton.UseVisualStyleBackColor = true;
+            this.vibrateServoButton.CheckedChanged += new System.EventHandler(this.vibrateServoButton_CheckedChanged);
             // 
             // groupBox5
             // 
