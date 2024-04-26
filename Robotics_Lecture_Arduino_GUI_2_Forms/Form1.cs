@@ -15,6 +15,7 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
         private String redIntensity = "";
         private String yellowIntensity = "";
         private String greenIntensity = "";
+        private String selectedSong = "";
 
         public Form1()
         {
@@ -147,5 +148,27 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
                 vibrateServoButton.Checked = false;
             }
         }
+
+        private void songComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedSong = songComboBox.SelectedItem.ToString();
+        }
+
+        private void playSong_Click(object sender, EventArgs e)
+        {
+            if (selectedSong.Equals("La Vien Rose"))
+            {
+                serialPort1.Write("Play First Song");
+                songStatusLabel.Text = "Now Playing La Vien Rose";
+            }
+
+            if (selectedSong.Equals("Fly Me to the Moon"))
+            {
+                serialPort1.Write("Play Second Song");
+                songStatusLabel.Text = "Now Playing Fly Me to the Moon";
+            }
+
+        }
+
     }
 }

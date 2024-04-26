@@ -42,15 +42,18 @@
             this.redButton = new System.Windows.Forms.Button();
             this.redTrackBar = new System.Windows.Forms.TrackBar();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.servoRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.resetButton = new System.Windows.Forms.Button();
             this.setServoAngleButton = new System.Windows.Forms.Button();
+            this.resetButton = new System.Windows.Forms.Button();
+            this.servoRichTextBox = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.blinkLEDsButton = new System.Windows.Forms.RadioButton();
-            this.beepBuzzerButton = new System.Windows.Forms.RadioButton();
             this.vibrateServoButton = new System.Windows.Forms.RadioButton();
+            this.beepBuzzerButton = new System.Windows.Forms.RadioButton();
+            this.blinkLEDsButton = new System.Windows.Forms.RadioButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.playSong = new System.Windows.Forms.Button();
+            this.songStatusLabel = new System.Windows.Forms.Label();
+            this.nowPlayingText = new System.Windows.Forms.Label();
+            this.songComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.greenTrackBar)).BeginInit();
@@ -230,15 +233,17 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Servo Controller";
             // 
-            // servoRichTextBox
+            // setServoAngleButton
             // 
-            this.servoRichTextBox.Font = new System.Drawing.Font("Malgun Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.servoRichTextBox.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.servoRichTextBox.Location = new System.Drawing.Point(23, 38);
-            this.servoRichTextBox.Name = "servoRichTextBox";
-            this.servoRichTextBox.Size = new System.Drawing.Size(158, 96);
-            this.servoRichTextBox.TabIndex = 5;
-            this.servoRichTextBox.Text = "";
+            this.setServoAngleButton.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.setServoAngleButton.Location = new System.Drawing.Point(23, 149);
+            this.setServoAngleButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.setServoAngleButton.Name = "setServoAngleButton";
+            this.setServoAngleButton.Size = new System.Drawing.Size(158, 39);
+            this.setServoAngleButton.TabIndex = 7;
+            this.setServoAngleButton.Text = "Set Angle";
+            this.setServoAngleButton.UseVisualStyleBackColor = true;
+            this.setServoAngleButton.Click += new System.EventHandler(this.setServoAngleButton_Click);
             // 
             // resetButton
             // 
@@ -252,17 +257,15 @@
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
-            // setServoAngleButton
+            // servoRichTextBox
             // 
-            this.setServoAngleButton.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.setServoAngleButton.Location = new System.Drawing.Point(23, 149);
-            this.setServoAngleButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.setServoAngleButton.Name = "setServoAngleButton";
-            this.setServoAngleButton.Size = new System.Drawing.Size(158, 39);
-            this.setServoAngleButton.TabIndex = 7;
-            this.setServoAngleButton.Text = "Set Angle";
-            this.setServoAngleButton.UseVisualStyleBackColor = true;
-            this.setServoAngleButton.Click += new System.EventHandler(this.setServoAngleButton_Click);
+            this.servoRichTextBox.Font = new System.Drawing.Font("Malgun Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servoRichTextBox.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.servoRichTextBox.Location = new System.Drawing.Point(23, 38);
+            this.servoRichTextBox.Name = "servoRichTextBox";
+            this.servoRichTextBox.Size = new System.Drawing.Size(158, 96);
+            this.servoRichTextBox.TabIndex = 5;
+            this.servoRichTextBox.Text = "";
             // 
             // groupBox3
             // 
@@ -281,18 +284,18 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Output Actions";
             // 
-            // blinkLEDsButton
+            // vibrateServoButton
             // 
-            this.blinkLEDsButton.AutoSize = true;
-            this.blinkLEDsButton.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blinkLEDsButton.Location = new System.Drawing.Point(39, 47);
-            this.blinkLEDsButton.Name = "blinkLEDsButton";
-            this.blinkLEDsButton.Size = new System.Drawing.Size(110, 27);
-            this.blinkLEDsButton.TabIndex = 0;
-            this.blinkLEDsButton.TabStop = true;
-            this.blinkLEDsButton.Text = "Blink LEDs";
-            this.blinkLEDsButton.UseVisualStyleBackColor = true;
-            this.blinkLEDsButton.CheckedChanged += new System.EventHandler(this.blinkLEDsButton_CheckedChanged);
+            this.vibrateServoButton.AutoSize = true;
+            this.vibrateServoButton.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vibrateServoButton.Location = new System.Drawing.Point(39, 144);
+            this.vibrateServoButton.Name = "vibrateServoButton";
+            this.vibrateServoButton.Size = new System.Drawing.Size(167, 27);
+            this.vibrateServoButton.TabIndex = 2;
+            this.vibrateServoButton.TabStop = true;
+            this.vibrateServoButton.Text = "Rotate Servo Arm";
+            this.vibrateServoButton.UseVisualStyleBackColor = true;
+            this.vibrateServoButton.CheckedChanged += new System.EventHandler(this.vibrateServoButton_CheckedChanged);
             // 
             // beepBuzzerButton
             // 
@@ -307,47 +310,82 @@
             this.beepBuzzerButton.UseVisualStyleBackColor = true;
             this.beepBuzzerButton.CheckedChanged += new System.EventHandler(this.beepBuzzerButton_CheckedChanged);
             // 
-            // vibrateServoButton
+            // blinkLEDsButton
             // 
-            this.vibrateServoButton.AutoSize = true;
-            this.vibrateServoButton.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vibrateServoButton.Location = new System.Drawing.Point(39, 144);
-            this.vibrateServoButton.Name = "vibrateServoButton";
-            this.vibrateServoButton.Size = new System.Drawing.Size(167, 27);
-            this.vibrateServoButton.TabIndex = 2;
-            this.vibrateServoButton.TabStop = true;
-            this.vibrateServoButton.Text = "Rotate Servo Arm";
-            this.vibrateServoButton.UseVisualStyleBackColor = true;
-            this.vibrateServoButton.CheckedChanged += new System.EventHandler(this.vibrateServoButton_CheckedChanged);
+            this.blinkLEDsButton.AutoSize = true;
+            this.blinkLEDsButton.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.blinkLEDsButton.Location = new System.Drawing.Point(39, 47);
+            this.blinkLEDsButton.Name = "blinkLEDsButton";
+            this.blinkLEDsButton.Size = new System.Drawing.Size(110, 27);
+            this.blinkLEDsButton.TabIndex = 0;
+            this.blinkLEDsButton.TabStop = true;
+            this.blinkLEDsButton.Text = "Blink LEDs";
+            this.blinkLEDsButton.UseVisualStyleBackColor = true;
+            this.blinkLEDsButton.CheckedChanged += new System.EventHandler(this.blinkLEDsButton_CheckedChanged);
             // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.groupBox5.Controls.Add(this.comboBox2);
+            this.groupBox5.Controls.Add(this.playSong);
+            this.groupBox5.Controls.Add(this.songStatusLabel);
+            this.groupBox5.Controls.Add(this.nowPlayingText);
+            this.groupBox5.Controls.Add(this.songComboBox);
             this.groupBox5.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.groupBox5.Location = new System.Drawing.Point(564, 273);
+            this.groupBox5.Location = new System.Drawing.Point(558, 273);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox5.Size = new System.Drawing.Size(321, 202);
+            this.groupBox5.Size = new System.Drawing.Size(327, 202);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Song Player";
             // 
-            // comboBox2
+            // playSong
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(22, 47);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(276, 31);
-            this.comboBox2.TabIndex = 0;
+            this.playSong.Location = new System.Drawing.Point(88, 95);
+            this.playSong.Name = "playSong";
+            this.playSong.Size = new System.Drawing.Size(153, 39);
+            this.playSong.TabIndex = 3;
+            this.playSong.Text = "Play Song";
+            this.playSong.UseVisualStyleBackColor = true;
+            this.playSong.Click += new System.EventHandler(this.playSong_Click);
+            // 
+            // songStatusLabel
+            // 
+            this.songStatusLabel.AutoSize = true;
+            this.songStatusLabel.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.songStatusLabel.Location = new System.Drawing.Point(6, 160);
+            this.songStatusLabel.Name = "songStatusLabel";
+            this.songStatusLabel.Size = new System.Drawing.Size(139, 23);
+            this.songStatusLabel.TabIndex = 2;
+            this.songStatusLabel.Text = "No Song Playing";
+            // 
+            // nowPlayingText
+            // 
+            this.nowPlayingText.AutoSize = true;
+            this.nowPlayingText.Location = new System.Drawing.Point(101, 121);
+            this.nowPlayingText.Name = "nowPlayingText";
+            this.nowPlayingText.Size = new System.Drawing.Size(0, 23);
+            this.nowPlayingText.TabIndex = 1;
+            // 
+            // songComboBox
+            // 
+            this.songComboBox.FormattingEnabled = true;
+            this.songComboBox.Items.AddRange(new object[] {
+            "La Vien Rose",
+            "Fly Me to the Moon"});
+            this.songComboBox.Location = new System.Drawing.Point(22, 47);
+            this.songComboBox.Name = "songComboBox";
+            this.songComboBox.Size = new System.Drawing.Size(276, 31);
+            this.songComboBox.TabIndex = 0;
+            this.songComboBox.SelectedIndexChanged += new System.EventHandler(this.songComboBox_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 507);
+            this.ClientSize = new System.Drawing.Size(935, 507);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
@@ -367,6 +405,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -394,7 +433,10 @@
         private System.Windows.Forms.RadioButton beepBuzzerButton;
         private System.Windows.Forms.RadioButton blinkLEDsButton;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox songComboBox;
+        private System.Windows.Forms.Label songStatusLabel;
+        private System.Windows.Forms.Label nowPlayingText;
+        private System.Windows.Forms.Button playSong;
     }
 }
 
