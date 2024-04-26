@@ -101,5 +101,15 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
             }
             serialPort1.Write(greenIntensity);
         }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            serialPort1.Write("Servo0");
+        }
+
+        private void setServoAngleButton_Click(object sender, EventArgs e)
+        {
+            serialPort1.Write("Servo" + servoRichTextBox.Text);
+        }
     }
 }
