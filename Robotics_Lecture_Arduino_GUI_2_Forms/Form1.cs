@@ -12,36 +12,24 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
 {
     public partial class Form1 : Form
     {
-        private String redIntensity = "";
-        private String yellowIntensity = "";
-        private String greenIntensity = "";
+        private String redValue = "";
+        private String yellowValue = "";
+        private String greenValue = "";
         private String selectedSong = "";
 
         public Form1()
         {
             InitializeComponent();
-            serialPort1.Open();
+            serialPort1.Open(); //COM3
         }
 
-        private void redLEDCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (redLEDCheckbox.Checked)
-            {
-                serialPort1.Write("ROn");
-                redIntensity = "R0";
-            }
-            else
-            {
-                serialPort1.Write("ROff");
-            }
-        }
 
         private void yellowLEDCheckbox_CheckedChanged(object sender, EventArgs e)
         {
             if (yellowLEDCheckbox.Checked)
             {
                 serialPort1.Write("YOn");
-                yellowIntensity = "Y0";
+                yellowValue = "Y0";
             }
             else
             {
@@ -54,7 +42,7 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
             if (greenLEDCheckbox.Checked)
             {
                 serialPort1.Write("GOn");
-                greenIntensity = "G0";
+                greenValue = "G0";
             }
             else
             {
@@ -62,98 +50,7 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
             }
 
         }
-
-        private void redTrackBar_Scroll(object sender, EventArgs e)
-        {
-            redIntensity = "RI" + redTrackBar.Value;
-        }
-
-        private void redButton_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(redIntensity))
-            {
-                serialPort1.Write("RI0");
-            }
-            redLEDCheckbox.Checked = false;
-            serialPort1.Write(redIntensity);
-        }
-
-        private void yellowTrackBar_Scroll(object sender, EventArgs e)
-        {
-            yellowIntensity = "YI" + yellowTrackBar.Value;
-        }
-
-        private void yellowButton_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(yellowIntensity))
-            {
-                serialPort1.Write("YI0");
-            }
-            yellowLEDCheckbox.Checked = false;
-            serialPort1.Write(yellowIntensity);
-        }
-
-        private void greenTrackBar_Scroll(object sender, EventArgs e)
-        {
-            greenIntensity = "GI" + greenTrackBar.Value;
-        }
-
-        private void greenButton_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(greenIntensity))
-            {
-                serialPort1.Write("GI0");
-            }
-            greenLEDCheckbox.Checked = false;
-            serialPort1.Write(greenIntensity);
-        }
-
-        private void resetButton_Click(object sender, EventArgs e)
-        {
-            servoRichTextBox.Text = "0";
-            serialPort1.Write("Servo0");
-        }
-
-        private void setServoAngleButton_Click(object sender, EventArgs e)
-        {
-            serialPort1.Write("Servo" + servoRichTextBox.Text);
-        }
-
-        private void blinkLEDsButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (blinkLEDsButton.Checked)
-            {
-                serialPort1.Write("Blnk");
-            }
-            else
-            {
-                blinkLEDsButton.Checked = false;
-            }
-        }
-
-        private void beepBuzzerButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (beepBuzzerButton.Checked)
-            {
-                serialPort1.Write("Beep");
-            }
-            else
-            {
-                beepBuzzerButton.Checked = false;
-            }
-        }
-
-        private void vibrateServoButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (vibrateServoButton.Checked)
-            {
-                serialPort1.Write("Vibrate");
-            }
-            else
-            {
-                vibrateServoButton.Checked = false;
-            }
-        }
+      
 
         private void songComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -176,5 +73,36 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
 
         }
 
+        private void move45Degrees_CheckedChanged(object sender, EventArgs e)
+        {
+            if (move45Degrees.Checked)
+            {
+                serialPort1.Write("S45");
+            }
+        }
+
+        private void move90Degrees_CheckedChanged(object sender, EventArgs e)
+        {
+            if (move90Degrees.Checked)
+            {
+                serialPort1.Write("S90");
+            }
+        }
+
+        private void move180Degrees_CheckedChanged(object sender, EventArgs e)
+        {
+            if (move180Degrees.Checked)
+            {
+                serialPort1.Write("");
+            }
+        }
+
+        private void sendLEDData_Click(object sender, EventArgs e)
+        {
+            if (redLEDCheckbox.Checked)
+            {
+
+            }
+        }
     }
 }
