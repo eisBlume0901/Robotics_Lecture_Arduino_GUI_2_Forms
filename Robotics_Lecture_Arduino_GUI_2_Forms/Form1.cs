@@ -121,5 +121,10 @@ Twinkle Twinkle Little Star
         {
             serialPort1.Write("S0");
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
