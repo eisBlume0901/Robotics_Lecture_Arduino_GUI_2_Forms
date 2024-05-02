@@ -24,33 +24,6 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
         }
 
 
-        private void yellowLEDCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (yellowLEDCheckbox.Checked)
-            {
-                serialPort1.Write("YOn");
-                yellowValue = "Y0";
-            }
-            else
-            {
-                serialPort1.Write("YOff");
-            }
-        }
-
-        private void greenCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (greenLEDCheckbox.Checked)
-            {
-                serialPort1.Write("GOn");
-                greenValue = "G0";
-            }
-            else
-            {
-                serialPort1.Write("GOff");
-            }
-
-        }
-      
 
         private void songComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -59,16 +32,26 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
 
         private void playSong_Click(object sender, EventArgs e)
         {
-            if (selectedSong.Equals("La Vien Rose"))
+            /*
+             * Happy Birthday
+Ba Ba Black Sheep
+Twinkle Twinkle Little Star
+             */
+            if (selectedSong.Equals("Happy Birthday"))
             {
-                serialPort1.Write("FirstSong");
-                songStatusLabel.Text = "Now Playing La Vien Rose";
+                serialPort1.Write("Birthday");
+                songStatusLabel.Text = "Now Playing Happy Birthday";
             }
 
-            if (selectedSong.Equals("Fly Me to the Moon"))
+            if (selectedSong.Equals("Ba Ba Black Sheep"))
             {
-                serialPort1.Write("SecondSong");
-                songStatusLabel.Text = "Now Playing Fly Me to the Moon";
+                serialPort1.Write("Sheep");
+                songStatusLabel.Text = "Now Playing Ba Ba Black Sheep";
+            }
+            if (selectedSong.Equals("Twinkle Twinkle Little Star"))
+            {
+                serialPort1.Write("Twinkle");
+                songStatusLabel.Text = "Now Playing Twinkle Twinkle Little Star";
             }
 
         }
@@ -93,15 +76,44 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
         {
             if (move180Degrees.Checked)
             {
-                serialPort1.Write("");
+                serialPort1.Write("S180");
             }
         }
 
-        private void sendLEDData_Click(object sender, EventArgs e)
+        private void sendRedData_Click(object sender, EventArgs e)
         {
             if (redLEDCheckbox.Checked)
             {
+                serialPort1.Write("ROn");
+            }
+            else
+            {
+                serialPort1.Write("ROff");
+            }
+        }
 
+        private void sendYellowData_Click(object sender, EventArgs e)
+        {
+            if (yellowLEDCheckbox.Checked)
+            {
+                serialPort1.Write("YOn");
+            }
+            else
+            {
+                serialPort1.Write("YOff");
+            }
+
+        }
+
+        private void sendGreenData_Click(object sender, EventArgs e)
+        {
+            if (greenLEDCheckbox.Checked)
+            {
+                serialPort1.Write("GOn");
+            }
+            else
+            {
+                serialPort1.Write("GOff");
             }
         }
     }
