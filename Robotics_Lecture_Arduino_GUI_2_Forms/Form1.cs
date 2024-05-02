@@ -116,5 +116,10 @@ Twinkle Twinkle Little Star
                 serialPort1.Write("GOff");
             }
         }
+
+        private void move0Degrees_Click(object sender, EventArgs e)
+        {
+            serialPort1.Write("S0");
+        }
     }
 }

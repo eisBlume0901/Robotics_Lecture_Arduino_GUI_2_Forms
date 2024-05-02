@@ -38,7 +38,7 @@
             this.redLEDCheckbox = new System.Windows.Forms.CheckBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.move0Degrees = new System.Windows.Forms.Button();
             this.move180Degrees = new System.Windows.Forms.RadioButton();
             this.move90Degrees = new System.Windows.Forms.RadioButton();
             this.move45Degrees = new System.Windows.Forms.RadioButton();
@@ -157,7 +157,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Bisque;
-            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.move0Degrees);
             this.groupBox3.Controls.Add(this.move180Degrees);
             this.groupBox3.Controls.Add(this.move90Degrees);
             this.groupBox3.Controls.Add(this.move45Degrees);
@@ -172,17 +172,18 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Servo Controller";
             // 
-            // button2
+            // move0Degrees
             // 
-            this.button2.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button2.Location = new System.Drawing.Point(35, 246);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(189, 49);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Reset";
-            this.button2.UseVisualStyleBackColor = true;
+            this.move0Degrees.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.move0Degrees.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.move0Degrees.Location = new System.Drawing.Point(35, 246);
+            this.move0Degrees.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.move0Degrees.Name = "move0Degrees";
+            this.move0Degrees.Size = new System.Drawing.Size(189, 49);
+            this.move0Degrees.TabIndex = 7;
+            this.move0Degrees.Text = "Reset";
+            this.move0Degrees.UseVisualStyleBackColor = true;
+            this.move0Degrees.Click += new System.EventHandler(this.move0Degrees_Click);
             // 
             // move180Degrees
             // 
@@ -327,7 +328,7 @@
         private System.Windows.Forms.Button sendRedData;
         private System.Windows.Forms.Button sendGreenData;
         private System.Windows.Forms.Button sendYellowData;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button move0Degrees;
     }
 }
 
