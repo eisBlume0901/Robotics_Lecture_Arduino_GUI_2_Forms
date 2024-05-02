@@ -1,127 +1,58 @@
-#define NOTE_B0 31
-#define NOTE_C1 33
-#define NOTE_CS1 35
-#define NOTE_D1 37
-#define NOTE_DS1 39
-#define NOTE_E1 41
-#define NOTE_F1 44
-#define NOTE_FS1 46
-#define NOTE_G1 49
-#define NOTE_GS1 52
-#define NOTE_A1 55
-#define NOTE_AS1 58
-#define NOTE_B1 62
-#define NOTE_C2 65
-#define NOTE_CS2 69
-#define NOTE_D2 73
-#define NOTE_DS2 78
-#define NOTE_E2 82
-#define NOTE_F2 87
-#define NOTE_FS2 93
-#define NOTE_G2 98
-#define NOTE_GS2 104
-#define NOTE_A2 110
-#define NOTE_AS2 117
-#define NOTE_B2 123
-#define NOTE_C3 131
-#define NOTE_CS3 139
-#define NOTE_D3 147
-#define NOTE_DS3 156
-#define NOTE_E3 165
-#define NOTE_F3 175
-#define NOTE_FS3 185
-#define NOTE_G3 196
-#define NOTE_GS3 208
-#define NOTE_A3 220
-#define NOTE_AS3 233
-#define NOTE_B3 247
-#define NOTE_C4 262
-#define NOTE_CS4 277
-#define NOTE_D4 294
-#define NOTE_DS4 311
-#define NOTE_E4 330
-#define NOTE_F4 349
-#define NOTE_FS4 370
-#define NOTE_G4 392
-#define NOTE_GS4 415
-#define NOTE_A4 440
-#define NOTE_AS4 466
-#define NOTE_B4 494
-#define NOTE_C5 523
-#define NOTE_CS5 554
-#define NOTE_D5 587
-#define NOTE_DS5 622
-#define NOTE_E5 659
-#define NOTE_F5 698
-#define NOTE_FS5 740
-#define NOTE_G5 784
-#define NOTE_GS5 831
-#define NOTE_A5 880
-#define NOTE_AS5 932
-#define NOTE_B5 988
-#define NOTE_C6 1047
-#define NOTE_CS6 1109
-#define NOTE_D6 1175
-#define NOTE_DS6 1245
-#define NOTE_E6 1319
-#define NOTE_F6 1397
-#define NOTE_FS6 1480
-#define NOTE_G6 1568
-#define NOTE_GS6 1661
-#define NOTE_A6 1760
-#define NOTE_AS6 1865
-#define NOTE_B6 1976
-#define NOTE_C7 2093
-#define NOTE_CS7 2217
-#define NOTE_D7 2349
-#define NOTE_DS7 2489
-#define NOTE_E7 2637
-#define NOTE_F7 2794
-#define NOTE_FS7 2960
-#define NOTE_G7 3136
-#define NOTE_GS7 3322
-#define NOTE_A7 3520
-#define NOTE_AS7 3729
-#define NOTE_B7 3951
-#define NOTE_C8 4186
-#define NOTE_CS8 4435
-#define NOTE_D8 4699
-#define NOTE_DS8 4978
+#include <Servo.h>
+Servo servo;
+int servoPin = 9;
 
 int redLED = 3;
 int yellowLED = 5;
 int greenLED = 6;
 
-#include <Servo.h>
-Servo servo;
-int servoPin = 9;
-
 int buzzPin = 10;
+
+#define C4 262
+#define CS4 277
+#define D4 294
+#define DS4 311
+#define E4 330
+#define F4 349
+#define FS4 370
+#define G4 392
+#define GS4 415
+#define A4 440
+#define AS4 466
+#define B4 494
+#define C5 523
+#define CS5 554
+#define D5 587
+#define DS5 622
+#define E5 659
+#define F5 698
+#define FS5 740
+#define G5 784
+#define GS5 831
+#define A5 880
+#define AS5 932
+#define B5 988
+#define C6 1047
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
+  servo.attach(servoPin);
 
   pinMode(redLED, OUTPUT);
   pinMode(yellowLED, OUTPUT);
   pinMode(greenLED, OUTPUT);
 
-  servo.attach(servoPin);
-  servo.write(0);
-  
   pinMode(buzzPin, OUTPUT);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
 
-
-  if (Serial.available()  > 0) 
-  {
-
+  if (Serial.available() > 0) {
     String data = Serial.readString();
 
-    if (data.startsWith("ROn")) {
+   if (data.startsWith("ROn")) {
       analogWrite(redLED, 255);
     }
     if (data.startsWith("ROff")) {
@@ -142,219 +73,55 @@ void loop() {
       analogWrite(greenLED, 0);
     }
 
-    if (data.startsWith("RI")) {
-      data.replace("RI", "");
-      int brightness = data.toInt();
-      analogWrite(redLED, brightness);
+    if (data.startsWith("S0")) {
+      servo.write(0);
     }
 
-    if (data.startsWith("YI")) {
-      data.replace("YI", "");
-      int brightness = data.toInt();
-      analogWrite(yellowLED, brightness);
+    if (data.startsWith("S45")) {
+      servo.write(45);
     }
 
-    if (data.startsWith("GI")) {
-      data.replace("GI", "");
-      int brightness = data.toInt();
-      analogWrite(greenLED, brightness);
+    if (data.startsWith("S90")) {
+      servo.write(90);
     }
 
-    if (data.startsWith("Servo")) {
-      data.replace("Servo", "");
-      int angle = data.toInt();
-      servo.write(angle);
+    if (data.startsWith("S180")) {
+      servo.write(180);
     }
 
-    if (data.startsWith("Blnk")) {
-      blinkLEDs(); 
+    if (data.startsWith("Birthday")) {
+      Serial.print("Birthday");
+      birthday();
     }
 
-    if (data.startsWith("Beep")) {
-      beepBuzzer();
+    if (data.startsWith("Sheep")) {
+      sheep();
     }
 
-    if (data.startsWith("Vibrate")) {
-      vibrateServo();
-    }
-
-    if (data.startsWith("FirstSong")) {
-      playFirstSong();
-    }
-
-    if (data.startsWith("SecondSong")) {
-      playSecondSong();
+    if (data.startsWith("Twinkle")) {
+      twinkle();
     }
   }
 }
 
-void controlLEDs(int redStatus, int yellowStatus, int greenStatus) {
-  digitalWrite(redLED, redStatus);
-  digitalWrite(yellowLED, yellowStatus);
-  digitalWrite(greenLED, greenStatus);
-}
-
-void blinkLEDs() {
-  int time1 = 250;
-  
-  int loop1 = 2;
-
-  while (loop1 > 0) {
-    controlLEDs(1, 0, 0);
-    delay(time1);
-    controlLEDs(0, 0, 0);
-    delay(time1);
-    loop1--;
-  }
-
-  int loop2 = 2;
-
-  while (loop2 > 0) {
-    controlLEDs(0, 1, 0);
-    delay(time1);
-    controlLEDs(0, 0, 0);
-    delay(time1);
-    loop2--;
-  }
-  
-  int loop3 = 2;
-  while (loop3 > 0) {
-    controlLEDs(0, 0, 1);
-    delay(time1);
-    controlLEDs(0, 0, 0);
-    delay(time1);
-    loop3--;
-  }
-
-  int loop4 = 2;
-
-  while (loop4 > 0) {
-    controlLEDs(0, 0, 1);
-    delay(time1);
-    controlLEDs(0, 1, 0);
-    delay(time1);
-    controlLEDs(1, 0, 0);
-    delay(time1);
-    controlLEDs(0, 1, 0);
-    delay(time1);
-    controlLEDs(0, 0, 1);
-    loop4--;
-  }
-
-  int loop5 = 4;
-  while (loop5 > 0) {
-    controlLEDs(1, 1, 1);
-    delay(time1);
-    controlLEDs(0, 0, 0);
-    delay(time1);
-    loop5--;
-  }
-}
-
-void beepBuzzer() {
-  int duration = 100;
-  int frequency = 500;
-  int interval = 250;
-  int loop1 = 3;
-
-  while (loop1 > 0) {
-    tone(buzzPin, frequency, duration);
-    delay(interval);
-    noTone(buzzPin);
-    tone(buzzPin, frequency, duration);
-    delay(interval);
-    noTone(buzzPin);
-    loop1--;
-  }
-
-}
-
-void vibrateServo() {
-  
-  int duration = 200;
-  int loop1 = 2;
-
-  while (loop1 > 0) {
-    servo.write(0);
-    delay(duration);
-    servo.write(45);
-    delay(duration);
-    servo.write(90);
-    delay(duration);
-    servo.write(135);
-    delay(duration);
-    servo.write(180);
-    delay(duration);
-    servo.write(135);
-    delay(duration);
-    servo.write(90);
-    delay(duration);
-    servo.write(45);
-    delay(duration);
-    servo.write(0);
-    delay(duration);
-    loop1--;
-  }
-}
-
-void playFirstSong() {
-  int duration = 3000;
+void birthday() {
+  int std = 60000 / 300 * 8;
+  int duration = 1550;
   int dot = 1.50;
   int melody[] = {
-    NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4, NOTE_E4, NOTE_C5,
-    NOTE_B4, NOTE_A4, NOTE_G4, NOTE_E4, NOTE_C4, NOTE_B4,
-    NOTE_A4, NOTE_G4, NOTE_E4, NOTE_B3, NOTE_C4, NOTE_B4,
-    NOTE_A4, NOTE_G4,
-
-    NOTE_D5, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_F4, NOTE_C5,
-    NOTE_B4, NOTE_A4, NOTE_G4, NOTE_F4, NOTE_D4, NOTE_B4,
-    NOTE_A4, NOTE_G4, NOTE_E4, NOTE_B3, NOTE_C4, NOTE_B4,
-    NOTE_A4, NOTE_G4,
-
-    NOTE_D5, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_F4, NOTE_C5,
-    NOTE_B4, NOTE_A4, NOTE_G4, NOTE_F4, NOTE_D4, NOTE_B4,
-    NOTE_A4, NOTE_G4, NOTE_E4, NOTE_B3, NOTE_C4, NOTE_C5,
-    NOTE_C5,
-
-    NOTE_D5, NOTE_D5, NOTE_D5, NOTE_C5, NOTE_D5, NOTE_D5, NOTE_D5, NOTE_C5,
-    NOTE_D5, NOTE_D5, NOTE_D5, NOTE_C5, NOTE_G4,
-    NOTE_D5, NOTE_D5, NOTE_D5, NOTE_C5, NOTE_D5, NOTE_D5, NOTE_D5, NOTE_C5,
-    NOTE_D5, NOTE_D5, NOTE_D5, NOTE_C5, NOTE_E5, NOTE_D5,
-
-    NOTE_D5, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_F4, NOTE_C5,
-    NOTE_B4, NOTE_A4, NOTE_G4, NOTE_F4, NOTE_D4, NOTE_B4,
-    NOTE_A4, NOTE_G4, NOTE_E4, NOTE_B3, NOTE_C4, NOTE_C5,
-    NOTE_C5
-
+    G4, G4, A4, G4, C5, B4,
+    G4, G4, A4, G4, D5, C5,
+    G4, G4, G5, E5, C5, C5, B4, A4,
+    F5, F5, E5, C5, D5, C5
   };
 
-  float noteDenomination[] =  {
-    4 * dot, 8, 8, 8, 8, 8,
-    4, 8, 8, 8, 8, 8,
-    4, 8, 8, 8, 8, 8,
-    2, 2,
-
-    4 * dot, 8, 8, 8, 8, 8,
-    4, 8, 8, 8, 8, 8,
-    4, 8, 8, 8, 8, 8,
-    2, 2,
-
-    4 * dot, 8, 8, 8, 8, 8,
-    4, 8, 8, 8, 8, 8,
-    4, 8, 8, 8, 8, 8,
-    1,
-
-    4, 8, 8, 4, 4, 8, 8, 4,
-    4, 8, 8, 4, 2,
-    4, 8, 8, 4, 4, 8, 8, 4,
-    4, 8, 8, 4, 4, 4,
-
-    4 * dot, 8, 8, 8, 8, 8,
-    4, 8, 8, 8, 8, 8,
-    4, 8, 8, 8, 8, 8,
-    1
-
+   int noteDenomination[] = {
+    5, 16, 4, 4, 4, 2,
+    5, 16, 4, 4, 4, 2,
+    5, 16, 4, 4, 8, 8, 4, 4,
+    5, 16, 4, 4, 4, 2
   };
+
 
   int size = sizeof(melody) / sizeof(melody[0]);
 
@@ -364,92 +131,59 @@ void playFirstSong() {
     delay(noteDuration);
     noTone(buzzPin);
   }
-
 }
 
-void playSecondSong() {
-  int duration = 2000;
+void twinkle() {
+  int std = 60000 / 300 * 8;
+  int duration = 1550;
+  int dot = 1.50;
   int melody[] = {
-    NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4, NOTE_F4,
-    NOTE_F4, NOTE_G4, NOTE_A4, NOTE_C5,
-    NOTE_B4, NOTE_A4, NOTE_G4, NOTE_F4, NOTE_E4,
-    NOTE_E4, NOTE_A4, NOTE_B4, NOTE_F4, NOTE_E4, NOTE_D4,
-
-    NOTE_D4, NOTE_E4, NOTE_F4, NOTE_A4,
-    NOTE_GS4, NOTE_F4, NOTE_E4, NOTE_D4, NOTE_C4,
-    NOTE_C4, NOTE_CS4, 
-    NOTE_D4, NOTE_A4, NOTE_A4,
-
-    NOTE_C5, NOTE_B4,
-    NOTE_G4,
-    NOTE_B3,
-    NOTE_C4, NOTE_F4, NOTE_F4,
-
-    NOTE_A4, NOTE_G4, NOTE_F4, NOTE_E4,
-    NOTE_E4, 
-
-    NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4, NOTE_F4,
-    NOTE_F4, NOTE_G4, NOTE_A4, NOTE_C5,
-    NOTE_B4, NOTE_A4, NOTE_G4, NOTE_F4, NOTE_E4,
-    NOTE_E4, NOTE_A4, NOTE_B4, NOTE_F4, NOTE_E4, NOTE_D4,
-
-    NOTE_D4, NOTE_E4, NOTE_F4, NOTE_A4,
-    NOTE_GS4, NOTE_F4, NOTE_E4, NOTE_D4, NOTE_C4,
-    NOTE_C4, NOTE_CS4,
-    NOTE_D4, NOTE_A4, NOTE_A4,
-
-    NOTE_C5, NOTE_B4,
-    NOTE_E5,
-    NOTE_E5,
-    NOTE_E5, NOTE_A4, NOTE_A4,
-
-    NOTE_C5, NOTE_B4,
-    NOTE_C5, 
-    NOTE_C5,
+    C4, C4, G4, G4, A4, A4, G4,
+    F4, F4, E4, E4, D4, D4, C4,
+    G4, G4, F4, F4, E4, E4, D4,
+    G4, G4, F4, F4, E4, E4, D4,
+    C4, C4, G4, G4, A4, A4, G4,
+    F4, F4, E4, E4, D4, D4, C4
   };
 
-  float noteDenomination[] = {
-    4, 4, 4, 8, 8,
-    4, 4, 4, 4,
-    4, 4, 4, 8, 8,
-    1, 4, 4, 4, 8, 8, 
-
-    4, 4, 4, 4,
-    4, 4, 4, 8, 8,
-    2, 8,
-    4, 4, 2, 
-
-    4, 4,
-    2,
-    8,
-    4, 4, 2,
-
-    8, 8, 8, 8,
-    2,
-
-    4, 4, 4, 8, 8,
-    4, 4, 4, 4,
-    4, 4, 4, 8, 8,
-    1, 4, 4, 4, 8, 8, 
-
-    4, 4, 4, 4,
-    4, 4, 4, 8, 8,
-    2, 8,
-    4, 4, 2, 
-
-    4, 4, 
-    1,
-    8,
-    4, 4, 8, 
-
-    4, 4,
-    1,
-    1,
+   int noteDenomination[] = {
+    4,4,4,4,4,4,2,
+    4,4,4,4,4,4,2,
+    4,4,4,4,4,4,2,
+    4,4,4,4,4,4,2,
+    4,4,4,4,4,4,2,
+    4,4,4,4,4,4,2
   };
+
 
   int size = sizeof(melody) / sizeof(melody[0]);
 
-  for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) {
+    int noteDuration = duration / noteDenomination[i];
+    tone(buzzPin, melody[i], noteDuration);    
+    delay(noteDuration);
+    noTone(buzzPin);
+  }
+}
+
+void sheep() {
+  int std = 60000 / 300 * 8;
+  int duration = 1550;
+  int dot = 1.50;
+  int melody[] = {
+    C4, C4, G4, G4, A4, B4, C5, A4, G4,
+    F4, F4, E4, E4, D4, E4, F4, D4, C4
+  };
+
+   int noteDenomination[] = {
+    4,4,4,4,8,8,8,8,2,
+    4,4,4,4,8,8,8,8,2
+  };
+
+
+  int size = sizeof(melody) / sizeof(melody[0]);
+
+    for (int i = 0; i < size; i++) {
     int noteDuration = duration / noteDenomination[i];
     tone(buzzPin, melody[i], noteDuration);    
     delay(noteDuration);
