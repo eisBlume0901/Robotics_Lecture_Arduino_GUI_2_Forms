@@ -16,7 +16,9 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
         private String yellowValue = "";
         private String greenValue = "";
         private String selectedSong = "";
-        private String volume = "";
+        private String birthdayVol = "";
+        private String sheepVol = "";
+        private String twinkleVol = "";
 
         public Form1()
         {
@@ -40,18 +42,18 @@ Twinkle Twinkle Little Star
              */
             if (selectedSong.Equals("Happy Birthday"))
             {
-                serialPort1.Write("Birthday");
+                birthdayVol = "Birthday";
                 songStatusLabel.Text = "Now Playing Happy Birthday";
             }
 
             if (selectedSong.Equals("Ba Ba Black Sheep"))
             {
-                serialPort1.Write("Sheep");
+                sheepVol = "Sheep";
                 songStatusLabel.Text = "Now Playing Ba Ba Black Sheep";
             }
             if (selectedSong.Equals("Twinkle Twinkle Little Star"))
             {
-                serialPort1.Write("Twinkle");
+                twinkleVol = "Twinkle";
                 songStatusLabel.Text = "Now Playing Twinkle Twinkle Little Star";
             }
 
@@ -126,8 +128,46 @@ Twinkle Twinkle Little Star
     
         private void volumeTrackBar_Scroll(object sender, EventArgs e)
         {
-            volume = "V" + volumeTrackBar.Value;
+            birthdayVol += Convert.ToString(volumeTrackBar.Value);
+            sheepVol += Convert.ToString(volumeTrackBar.Value);
+            twinkleVol += Convert.ToString(volumeTrackBar.Value);
+
         }
 
+        private void sendVolumeButton_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(birthdayVol))
+            {
+                serialPort1.Write("Birthday0");
+            }
+            else
+            {
+                serialPort1.Write(birthdayVol);
+
+            }
+
+            if (String.IsNullOrEmpty(sheepVol))
+            {
+                serialPort1.Write("Sheep0");
+            }
+            else
+            {
+                serialPort1.Write(sheepVol);
+
+            }
+
+            if (String.IsNullOrEmpty(twinkleVol))
+            {
+                serialPort1.Write("Twinkle0");
+            }
+            else
+            {
+                serialPort1.Write(twinkleVol);
+
+            }
+
+
+
+        }
     }
 }

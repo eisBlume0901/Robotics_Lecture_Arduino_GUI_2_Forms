@@ -69,11 +69,11 @@
             this.groupBox1.Controls.Add(this.redLEDCheckbox);
             this.groupBox1.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.groupBox1.Location = new System.Drawing.Point(50, 46);
+            this.groupBox1.Location = new System.Drawing.Point(44, 37);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(640, 248);
+            this.groupBox1.Size = new System.Drawing.Size(569, 198);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LED Selector";
@@ -82,10 +82,9 @@
             // 
             this.sendGreenData.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sendGreenData.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.sendGreenData.Location = new System.Drawing.Point(342, 178);
-            this.sendGreenData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sendGreenData.Location = new System.Drawing.Point(304, 142);
             this.sendGreenData.Name = "sendGreenData";
-            this.sendGreenData.Size = new System.Drawing.Size(256, 49);
+            this.sendGreenData.Size = new System.Drawing.Size(228, 39);
             this.sendGreenData.TabIndex = 6;
             this.sendGreenData.Text = "Send Green Data";
             this.sendGreenData.UseVisualStyleBackColor = true;
@@ -95,10 +94,9 @@
             // 
             this.sendYellowData.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sendYellowData.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.sendYellowData.Location = new System.Drawing.Point(342, 109);
-            this.sendYellowData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sendYellowData.Location = new System.Drawing.Point(304, 87);
             this.sendYellowData.Name = "sendYellowData";
-            this.sendYellowData.Size = new System.Drawing.Size(256, 49);
+            this.sendYellowData.Size = new System.Drawing.Size(228, 39);
             this.sendYellowData.TabIndex = 5;
             this.sendYellowData.Text = "Send Yellow Data";
             this.sendYellowData.UseVisualStyleBackColor = true;
@@ -108,10 +106,9 @@
             // 
             this.sendRedData.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sendRedData.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.sendRedData.Location = new System.Drawing.Point(342, 31);
-            this.sendRedData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sendRedData.Location = new System.Drawing.Point(304, 25);
             this.sendRedData.Name = "sendRedData";
-            this.sendRedData.Size = new System.Drawing.Size(256, 49);
+            this.sendRedData.Size = new System.Drawing.Size(228, 39);
             this.sendRedData.TabIndex = 4;
             this.sendRedData.Text = "Send Red Data";
             this.sendRedData.UseVisualStyleBackColor = true;
@@ -122,10 +119,10 @@
             this.greenLEDCheckbox.AutoSize = true;
             this.greenLEDCheckbox.Font = new System.Drawing.Font("Malgun Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.greenLEDCheckbox.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.greenLEDCheckbox.Location = new System.Drawing.Point(25, 179);
+            this.greenLEDCheckbox.Location = new System.Drawing.Point(22, 143);
             this.greenLEDCheckbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.greenLEDCheckbox.Name = "greenLEDCheckbox";
-            this.greenLEDCheckbox.Size = new System.Drawing.Size(243, 42);
+            this.greenLEDCheckbox.Size = new System.Drawing.Size(207, 36);
             this.greenLEDCheckbox.TabIndex = 2;
             this.greenLEDCheckbox.Text = "Turn Green LED";
             this.greenLEDCheckbox.UseVisualStyleBackColor = true;
@@ -135,10 +132,10 @@
             this.yellowLEDCheckbox.AutoSize = true;
             this.yellowLEDCheckbox.Font = new System.Drawing.Font("Malgun Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.yellowLEDCheckbox.ForeColor = System.Drawing.Color.Goldenrod;
-            this.yellowLEDCheckbox.Location = new System.Drawing.Point(25, 109);
+            this.yellowLEDCheckbox.Location = new System.Drawing.Point(22, 87);
             this.yellowLEDCheckbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.yellowLEDCheckbox.Name = "yellowLEDCheckbox";
-            this.yellowLEDCheckbox.Size = new System.Drawing.Size(250, 42);
+            this.yellowLEDCheckbox.Size = new System.Drawing.Size(213, 36);
             this.yellowLEDCheckbox.TabIndex = 1;
             this.yellowLEDCheckbox.Text = "Turn Yellow LED";
             this.yellowLEDCheckbox.UseVisualStyleBackColor = true;
@@ -148,17 +145,17 @@
             this.redLEDCheckbox.AutoSize = true;
             this.redLEDCheckbox.Font = new System.Drawing.Font("Malgun Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.redLEDCheckbox.ForeColor = System.Drawing.Color.OrangeRed;
-            this.redLEDCheckbox.Location = new System.Drawing.Point(26, 40);
+            this.redLEDCheckbox.Location = new System.Drawing.Point(23, 32);
             this.redLEDCheckbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.redLEDCheckbox.Name = "redLEDCheckbox";
-            this.redLEDCheckbox.Size = new System.Drawing.Size(216, 42);
+            this.redLEDCheckbox.Size = new System.Drawing.Size(184, 36);
             this.redLEDCheckbox.TabIndex = 0;
             this.redLEDCheckbox.Text = "Turn Red LED";
             this.redLEDCheckbox.UseVisualStyleBackColor = true;
             // 
             // serialPort1
             // 
-            this.serialPort1.PortName = "COM3";
+            this.serialPort1.PortName = "COM4";
             // 
             // groupBox3
             // 
@@ -169,11 +166,11 @@
             this.groupBox3.Controls.Add(this.move45Degrees);
             this.groupBox3.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.groupBox3.Location = new System.Drawing.Point(741, 46);
+            this.groupBox3.Location = new System.Drawing.Point(659, 37);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(273, 248);
+            this.groupBox3.Size = new System.Drawing.Size(243, 198);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Servo Controller";
@@ -182,10 +179,9 @@
             // 
             this.move0Degrees.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.move0Degrees.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.move0Degrees.Location = new System.Drawing.Point(43, 178);
-            this.move0Degrees.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.move0Degrees.Location = new System.Drawing.Point(38, 142);
             this.move0Degrees.Name = "move0Degrees";
-            this.move0Degrees.Size = new System.Drawing.Size(189, 49);
+            this.move0Degrees.Size = new System.Drawing.Size(168, 39);
             this.move0Degrees.TabIndex = 7;
             this.move0Degrees.Text = "Reset";
             this.move0Degrees.UseVisualStyleBackColor = true;
@@ -195,10 +191,9 @@
             // 
             this.move180Degrees.AutoSize = true;
             this.move180Degrees.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.move180Degrees.Location = new System.Drawing.Point(56, 124);
-            this.move180Degrees.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.move180Degrees.Location = new System.Drawing.Point(50, 99);
             this.move180Degrees.Name = "move180Degrees";
-            this.move180Degrees.Size = new System.Drawing.Size(156, 34);
+            this.move180Degrees.Size = new System.Drawing.Size(124, 27);
             this.move180Degrees.TabIndex = 2;
             this.move180Degrees.TabStop = true;
             this.move180Degrees.Text = "180 degrees";
@@ -209,10 +204,9 @@
             // 
             this.move90Degrees.AutoSize = true;
             this.move90Degrees.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.move90Degrees.Location = new System.Drawing.Point(56, 82);
-            this.move90Degrees.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.move90Degrees.Location = new System.Drawing.Point(50, 66);
             this.move90Degrees.Name = "move90Degrees";
-            this.move90Degrees.Size = new System.Drawing.Size(144, 34);
+            this.move90Degrees.Size = new System.Drawing.Size(115, 27);
             this.move90Degrees.TabIndex = 1;
             this.move90Degrees.TabStop = true;
             this.move90Degrees.Text = "90 degrees";
@@ -223,10 +217,9 @@
             // 
             this.move45Degrees.AutoSize = true;
             this.move45Degrees.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.move45Degrees.Location = new System.Drawing.Point(56, 40);
-            this.move45Degrees.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.move45Degrees.Location = new System.Drawing.Point(50, 32);
             this.move45Degrees.Name = "move45Degrees";
-            this.move45Degrees.Size = new System.Drawing.Size(144, 34);
+            this.move45Degrees.Size = new System.Drawing.Size(115, 27);
             this.move45Degrees.TabIndex = 0;
             this.move45Degrees.TabStop = true;
             this.move45Degrees.Text = "45 degrees";
@@ -242,21 +235,20 @@
             this.groupBox5.Controls.Add(this.songComboBox);
             this.groupBox5.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.groupBox5.Location = new System.Drawing.Point(50, 324);
+            this.groupBox5.Location = new System.Drawing.Point(44, 259);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox5.Size = new System.Drawing.Size(494, 252);
+            this.groupBox5.Size = new System.Drawing.Size(439, 202);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Song Player";
             // 
             // playSong
             // 
-            this.playSong.Location = new System.Drawing.Point(150, 118);
-            this.playSong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.playSong.Location = new System.Drawing.Point(133, 94);
             this.playSong.Name = "playSong";
-            this.playSong.Size = new System.Drawing.Size(172, 49);
+            this.playSong.Size = new System.Drawing.Size(153, 39);
             this.playSong.TabIndex = 3;
             this.playSong.Text = "Play Song";
             this.playSong.UseVisualStyleBackColor = true;
@@ -266,18 +258,18 @@
             // 
             this.songStatusLabel.AutoSize = true;
             this.songStatusLabel.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.songStatusLabel.Location = new System.Drawing.Point(32, 199);
+            this.songStatusLabel.Location = new System.Drawing.Point(28, 159);
             this.songStatusLabel.Name = "songStatusLabel";
-            this.songStatusLabel.Size = new System.Drawing.Size(173, 30);
+            this.songStatusLabel.Size = new System.Drawing.Size(139, 23);
             this.songStatusLabel.TabIndex = 2;
             this.songStatusLabel.Text = "No Song Playing";
             // 
             // nowPlayingText
             // 
             this.nowPlayingText.AutoSize = true;
-            this.nowPlayingText.Location = new System.Drawing.Point(114, 151);
+            this.nowPlayingText.Location = new System.Drawing.Point(101, 121);
             this.nowPlayingText.Name = "nowPlayingText";
-            this.nowPlayingText.Size = new System.Drawing.Size(0, 28);
+            this.nowPlayingText.Size = new System.Drawing.Size(0, 23);
             this.nowPlayingText.TabIndex = 1;
             // 
             // songComboBox
@@ -287,10 +279,9 @@
             "Happy Birthday",
             "Ba Ba Black Sheep",
             "Twinkle Twinkle Little Star"});
-            this.songComboBox.Location = new System.Drawing.Point(25, 59);
-            this.songComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.songComboBox.Location = new System.Drawing.Point(22, 47);
             this.songComboBox.Name = "songComboBox";
-            this.songComboBox.Size = new System.Drawing.Size(447, 36);
+            this.songComboBox.Size = new System.Drawing.Size(398, 31);
             this.songComboBox.TabIndex = 0;
             this.songComboBox.SelectedIndexChanged += new System.EventHandler(this.songComboBox_SelectedIndexChanged);
             // 
@@ -302,48 +293,49 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.groupBox2.Location = new System.Drawing.Point(579, 324);
+            this.groupBox2.Location = new System.Drawing.Point(515, 259);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(442, 252);
+            this.groupBox2.Size = new System.Drawing.Size(393, 202);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Volume Controller";
             // 
             // volumeTrackBar
             // 
-            this.volumeTrackBar.Location = new System.Drawing.Point(24, 59);
+            this.volumeTrackBar.Location = new System.Drawing.Point(21, 47);
+            this.volumeTrackBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.volumeTrackBar.Maximum = 255;
             this.volumeTrackBar.Name = "volumeTrackBar";
-            this.volumeTrackBar.Size = new System.Drawing.Size(396, 69);
+            this.volumeTrackBar.Size = new System.Drawing.Size(352, 56);
             this.volumeTrackBar.TabIndex = 4;
             this.volumeTrackBar.TickFrequency = 5;
             this.volumeTrackBar.Scroll += new System.EventHandler(this.volumeTrackBar_Scroll);
             // 
             // sendVolumeButton
             // 
-            this.sendVolumeButton.Location = new System.Drawing.Point(119, 135);
-            this.sendVolumeButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sendVolumeButton.Location = new System.Drawing.Point(118, 104);
             this.sendVolumeButton.Name = "sendVolumeButton";
-            this.sendVolumeButton.Size = new System.Drawing.Size(172, 49);
+            this.sendVolumeButton.Size = new System.Drawing.Size(153, 39);
             this.sendVolumeButton.TabIndex = 3;
             this.sendVolumeButton.Text = "Send Volume";
             this.sendVolumeButton.UseVisualStyleBackColor = true;
+            this.sendVolumeButton.Click += new System.EventHandler(this.sendVolumeButton_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(114, 151);
+            this.label2.Location = new System.Drawing.Point(101, 121);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 28);
+            this.label2.Size = new System.Drawing.Size(0, 23);
             this.label2.TabIndex = 1;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 845);
+            this.ClientSize = new System.Drawing.Size(935, 676);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
