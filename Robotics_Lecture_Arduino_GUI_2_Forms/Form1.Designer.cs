@@ -47,9 +47,15 @@
             this.songStatusLabel = new System.Windows.Forms.Label();
             this.nowPlayingText = new System.Windows.Forms.Label();
             this.songComboBox = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.volumeTrackBar = new System.Windows.Forms.TrackBar();
+            this.sendVolumeButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.volumeTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -240,7 +246,7 @@
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox5.Size = new System.Drawing.Size(640, 252);
+            this.groupBox5.Size = new System.Drawing.Size(494, 252);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Song Player";
@@ -288,24 +294,72 @@
             this.songComboBox.TabIndex = 0;
             this.songComboBox.SelectedIndexChanged += new System.EventHandler(this.songComboBox_SelectedIndexChanged);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Bisque;
+            this.groupBox2.Controls.Add(this.volumeTrackBar);
+            this.groupBox2.Controls.Add(this.sendVolumeButton);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.groupBox2.Location = new System.Drawing.Point(579, 324);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(442, 252);
+            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Volume Controller";
+            // 
+            // volumeTrackBar
+            // 
+            this.volumeTrackBar.Location = new System.Drawing.Point(24, 59);
+            this.volumeTrackBar.Maximum = 255;
+            this.volumeTrackBar.Name = "volumeTrackBar";
+            this.volumeTrackBar.Size = new System.Drawing.Size(396, 69);
+            this.volumeTrackBar.TabIndex = 4;
+            this.volumeTrackBar.TickFrequency = 5;
+            this.volumeTrackBar.Scroll += new System.EventHandler(this.volumeTrackBar_Scroll);
+            // 
+            // sendVolumeButton
+            // 
+            this.sendVolumeButton.Location = new System.Drawing.Point(119, 135);
+            this.sendVolumeButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sendVolumeButton.Name = "sendVolumeButton";
+            this.sendVolumeButton.Size = new System.Drawing.Size(172, 49);
+            this.sendVolumeButton.TabIndex = 3;
+            this.sendVolumeButton.Text = "Send Volume";
+            this.sendVolumeButton.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(114, 151);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 28);
+            this.label2.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 692);
+            this.ClientSize = new System.Drawing.Size(1052, 845);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.volumeTrackBar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -330,6 +384,10 @@
         private System.Windows.Forms.Button sendGreenData;
         private System.Windows.Forms.Button sendYellowData;
         private System.Windows.Forms.Button move0Degrees;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TrackBar volumeTrackBar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button sendVolumeButton;
     }
 }
 

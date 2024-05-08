@@ -16,6 +16,7 @@ namespace Robotics_Lecture_Arduino_GUI_2_Forms
         private String yellowValue = "";
         private String greenValue = "";
         private String selectedSong = "";
+        private String volume = "";
 
         public Form1()
         {
@@ -122,9 +123,11 @@ Twinkle Twinkle Little Star
             serialPort1.Write("S0");
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+    
+        private void volumeTrackBar_Scroll(object sender, EventArgs e)
         {
-
+            volume = "V" + volumeTrackBar.Value;
         }
+
     }
 }
